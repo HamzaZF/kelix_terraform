@@ -18,7 +18,7 @@ resource "azurerm_key_vault" "adb_kv" {
   access_policy {
     # tenant_id = data.azurerm_client_config.current.tenant_id
     # object_id = data.azurerm_client_config.current.object_id
-    tenant_id = data.azuread_user.current_user.tenant_id
+    tenant_id = data.azuread_client_config.current.tenant_id
     object_id = data.azuread_user.current_user.object_id
 
     secret_permissions = [
