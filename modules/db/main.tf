@@ -57,7 +57,7 @@ resource "azurerm_private_endpoint" "sql-server-pe" {
   subnet_id = var.private_link_subnet
 
 
-    private_dns_zone_group {
+  private_dns_zone_group {
     name                 = "private-db-dns-zone-group"
     private_dns_zone_ids = [azurerm_private_dns_zone.db-dns.id]
   }
