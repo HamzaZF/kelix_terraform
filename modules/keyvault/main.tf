@@ -7,6 +7,9 @@ data "azurerm_client_config" "current" {}
 data "azuread_user" "current_user" {
   user_principal_name = var.current_user
 }
+
+data "azuread_client_config" "current_azuread" {}
+
 resource "azurerm_key_vault" "adb_kv" {
   name                       = format("kv-%s-%s", var.owner_custom, var.purpose_custom)
   location                   = var.location
@@ -18,7 +21,7 @@ resource "azurerm_key_vault" "adb_kv" {
   access_policy {
     # tenant_id = data.azurerm_client_config.current.tenant_id
     # object_id = data.azurerm_client_config.current.object_id
-    tenant_id = data.azuread_client_config.current.tenant_id
+    tenant_id = data.azuread_client_config.current_azuread.tenant_id
     object_id = data.azuread_user.current_user.object_id
 
     secret_permissions = [
