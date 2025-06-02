@@ -1,9 +1,12 @@
 locals {
   resource_group_name = format("rg-%s-%s", var.owner_custom, var.purpose_custom)
 }
+
 data "azurerm_client_config" "current" {}
 
-
+data "azuread_user" "current_user" {
+  user_principal_name = var.current_user
+}
 resource "azurerm_key_vault" "adb_kv" {
   name                       = format("kv-%s-%s", var.owner_custom, var.purpose_custom)
   location                   = var.location
@@ -13,8 +16,10 @@ resource "azurerm_key_vault" "adb_kv" {
   purge_protection_enabled   = true
   sku_name                   = "standard"
   access_policy {
-    tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.object_id
+    # tenant_id = data.azurerm_client_config.current.tenant_id
+    # object_id = data.azurerm_client_config.current.object_id
+    tenant_id = data.azuread_user.current_user.tenant_id
+    object_id = data.azuread_user.current_user.object_id
 
     secret_permissions = [
       "Get", "List", "Set"

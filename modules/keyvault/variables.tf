@@ -16,3 +16,8 @@ variable "private_link_subnet" {
 variable "vnet_id" {
   description = "Vnet ID for DNS integration"
 }
+
+variable "current_user" {
+  description = "Current user principal name"
+  type        = string
+}

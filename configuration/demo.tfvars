@@ -8,6 +8,8 @@ purpose = "test"
 location = "australiaeast"
 org = "Meinhardt"
 
+current_user = "Hamza.Zarfaoui@meinhardtgroup.com"
+
 #Referenced in network module
 address_space = ["10.10.0.0/21"]
 
