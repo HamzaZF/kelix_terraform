@@ -53,7 +53,7 @@ module "adb" {
   private_subnet_network_security_group_association_id = module.network.private_nsg_association
   key_vault_id                                         = module.keyvault.kv_id
   key_vault_uri                                        = module.keyvault.kv_uri
-  depends_on                                           = [module.network]
+  depends_on                                           = [module.network, module.db]
 
 }
 
