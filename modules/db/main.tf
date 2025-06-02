@@ -30,6 +30,7 @@ resource "azurerm_mssql_server" "sql-server" {
   version                      = "12.0"
   administrator_login          = azurerm_key_vault_secret.db_un.value
   administrator_login_password = azurerm_key_vault_secret.db_pw.value
+  minimum_tls_version = "1.2"
 }
 
 resource "azurerm_mssql_database" "sql-db" {
