@@ -2,7 +2,6 @@ locals {
   resource_group_name = format("rg-%s-%s", var.owner_custom, var.purpose_custom)
 }
 
-
 resource "azurerm_public_ip" "public-ip" {
   name                = format("public-ip-%s-%s", var.owner_custom, var.purpose_custom)
   location            = var.location
@@ -15,6 +14,8 @@ resource "azurerm_firewall" "adb-firewall" {
   name                = format("firewall-%s-%s", var.owner_custom, var.purpose_custom)
   location            = var.location
   resource_group_name = local.resource_group_name
+  sku_name            = "AZFW_VNet"
+  sku_tier            = "Standard"
 
   ip_configuration {
     name                 = "adb_configuration"

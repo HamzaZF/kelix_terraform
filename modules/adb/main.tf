@@ -24,7 +24,6 @@ data "azurerm_key_vault_secret" "db-un" {
   key_vault_id = var.key_vault_id
 }
 
-
 data "azurerm_key_vault_secret" "db-pw" {
   name         = "db-password"
   key_vault_id = var.key_vault_id
@@ -59,7 +58,9 @@ resource "databricks_cluster" "shared_autoscaling" {
   spark_conf = {
     "spark.databricks.io.cache.enabled" : true,
     "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
-    "spark.hadoop.javax.jdo.option.ConnectionURL" : "jdbc:sqlserver://sqlserver-raghav-demo.database.windows.net:1433;database=metastoredb"
+    # "spark.hadoop.javax.jdo.option.ConnectionURL" : "jdbc:sqlserver://sqlserver-raghav-demo.database.windows.net:1433;database=metastoredb"
+    "spark.hadoop.javax.jdo.option.ConnectionURL" : "jdbc:sqlserver://sqlserver-${var.owner_custom}-${var.purpose_custom}.database.windows.net:1433;database=metastoredb"
+
     "spark.databricks.delta.preview.enabled" : true,
     "spark.hadoop.javax.jdo.option.ConnectionUserName" : data.azurerm_key_vault_secret.db-un.value,
     "datanucleus.fixedDatastore" : false,

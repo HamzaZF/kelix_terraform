@@ -44,19 +44,19 @@ variable "nsg" {
   
 }
 
-variable "private_link_subnet" {
-    description = "ID of Private link Subnet"
+# variable "private_link_subnet" {
+#   description = "ID of Private link Subnet"
   
-}
+# }
 
-variable "fw_subnet_id" {
-  description = "ID of firewall Subnet"
-}
+# variable "fw_subnet_id" {
+#   description = "ID of firewall Subnet"
+# }
 
-variable "rt_public_subnet" {
-  description = "ID of public ADB subnet"
-}
+# variable "rt_public_subnet" {
+#   description = "ID of public ADB subnet"
+# }
 
-variable "rt_private_subnet" {
-  description = "ID of private ADB subnet"
-}
+# variable "rt_private_subnet" {
+#   description = "ID of private ADB subnet"
+# }

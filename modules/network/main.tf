@@ -58,7 +58,6 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = local.resource_group_name
 }
 
-
 resource "azurerm_subnet_network_security_group_association" "nsg_association" {
   for_each = {
     for subnet_key, nsg_key in local.subnet_nsgs : subnet_key => {
@@ -71,3 +70,4 @@ resource "azurerm_subnet_network_security_group_association" "nsg_association" {
   subnet_id                 = each.value.subnet_id
   network_security_group_id = each.value.nsg_id
 }
+

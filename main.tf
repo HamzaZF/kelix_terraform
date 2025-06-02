@@ -20,6 +20,7 @@ provider "azurerm" {
 provider "databricks" {
   azure_workspace_resource_id = module.adb.adb_id
 }
+
 module "rg" {
   source         = "./modules/resource-group"
   owner          = var.owner

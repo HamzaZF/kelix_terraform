@@ -41,7 +41,7 @@ resource "azurerm_private_endpoint" "kv-pe" {
   location                     = var.location
   subnet_id = var.private_link_subnet
 
-    private_dns_zone_group {
+  private_dns_zone_group {
     name                 = "private-kv-dns-zone-group"
     private_dns_zone_ids = [azurerm_private_dns_zone.kv-dns.id]
   }

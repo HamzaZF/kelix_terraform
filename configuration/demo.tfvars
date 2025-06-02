@@ -1,12 +1,12 @@
 #Referenced common across modules
-owner_custom = "raghav"
+owner_custom = "hamza"
 purpose_custom = "demo"
 
 #Referenced in resource-group module
-owner = "raghavendra.bharadwaj@servian.com"
+owner = "hamza.zarfaoui@meinhardtgroup.com"
 purpose = "test"
 location = "australiaeast"
-org = "Servian"
+org = "Meinhardt"
 
 #Referenced in network module
 address_space = ["10.10.0.0/21"]
@@ -47,10 +47,10 @@ nsg = {
         }
     }
 
-    private_link_subnet = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/privatelink_subnet"
+# private_link_subnet = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/privatelink_subnet"
 
-    fw_subnet_id = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/AzureFirewallSubnet"
+# fw_subnet_id = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/AzureFirewallSubnet"
 
-    rt_public_subnet = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/public_subnet"
+# rt_public_subnet = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/public_subnet"
     
-    rt_private_subnet = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/private_subnet"
+# rt_private_subnet = "/subscriptions/58f627af-5f2f-4f24-b8b3-67712c182a5c/resourceGroups/rg-raghav-demo/providers/Microsoft.Network/virtualNetworks/raghav-demo-vnet/subnets/private_subnet"
