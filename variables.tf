@@ -6,6 +6,11 @@ variable "purpose" {
     description = "Purpose of the resource"
 }
 
+variable "current_user" {
+    description = "Current user principal name"
+    type        = string
+}
+
 variable "location" {
     description = "Location in which resource needs to be spinned up"
 }
