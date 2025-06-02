@@ -61,6 +61,7 @@ module "keyvault" {
   source              = "./modules/keyvault"
   owner_custom        = var.owner_custom
   purpose_custom      = var.purpose_custom
+  current_user       = var.current_user
   location            = var.location
   private_link_subnet = module.network.private_link_subnet
   vnet_id             = module.network.vnet_id
